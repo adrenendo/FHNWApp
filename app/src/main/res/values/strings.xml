@@ -6,5 +6,7 @@
 
     <string name="action_settings">Settings</string>
     <string name="developer_email">rafael.nuenlist@students.fhnw.ch</string>
+    <string name="fragment_main_text">Main</string>
+    <string name="fragment_share_text">Share it!</string>
 
 </resources>
