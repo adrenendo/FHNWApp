@@ -7,4 +7,5 @@
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#ffffff</color-->
     <color name="colorForeground">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
 </resources>

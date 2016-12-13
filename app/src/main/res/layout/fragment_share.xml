@@ -6,5 +6,6 @@
         android:text="@string/fragment_share_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/fragment_horizontal_margin"
         android:id="@+id/textView2" />
 </FrameLayout>
