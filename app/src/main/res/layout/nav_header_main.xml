@@ -10,20 +10,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:weightSum="1">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="219dp"
-        android:layout_height="43dp"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
         app:srcCompat="@drawable/fhnw_logo" />
 
-    <TextView
+    <!--TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/developer_email"
-        android:textColor="@color/colorForeground" />
+        android:textColor="@color/colorForeground" /-->
 
 </LinearLayout>
