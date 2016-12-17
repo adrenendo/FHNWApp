@@ -9,4 +9,7 @@
     <string name="fragment_main_text">Main</string>
     <string name="fragment_share_text">Share it!</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
