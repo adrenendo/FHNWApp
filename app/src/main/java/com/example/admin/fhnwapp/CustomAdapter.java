@@ -18,17 +18,17 @@ import android.widget.TextView;
 
 import com.example.admin.fragments.FAQFragment;
 
-public class CustomAdapter extends BaseAdapter
-{
+public class CustomAdapter extends BaseAdapter {
     Context mContext;
-    List<FAQFragment.Entry> beandata;
+    List<FAQEntry> beandata;
     LayoutInflater mInflater;
-    public CustomAdapter(Context context,List<FAQFragment.Entry> itemList)
-    {
+
+    public CustomAdapter(Context context, List<FAQEntry> itemList) {
         mContext = context;
         beandata = itemList;
         mInflater = LayoutInflater.from(context);
     }
+
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
@@ -51,26 +51,26 @@ public class CustomAdapter extends BaseAdapter
     public View getView(int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         ViewHolder vh;
-        if(convertView == null)
-        {
-            vh= new ViewHolder();
+        if (convertView == null) {
+            vh = new ViewHolder();
             convertView = mInflater.inflate(R.layout.row,
                     parent, false);
             vh.tv1 = (TextView) convertView.findViewById(R.id.textView1);
             vh.tv2 = (TextView) convertView.findViewById(R.id.textView2);
             convertView.setTag(vh);
+
         } else {
             vh = (ViewHolder) convertView.getTag();
         }
-        FAQFragment.Entry objBean = beandata.get(position);
-        vh.tv1.setText(objBean.link);
-        vh.tv2.setText(objBean.summary);
+        FAQEntry objBean = beandata.get(position);
+        vh.tv1.setText(objBean.getQuestion());
+        vh.tv2.setText(objBean.getAnswer());
 
         return convertView;
     }
-    static class ViewHolder
-    {
-        TextView tv1,tv2;
+
+    static class ViewHolder {
+        TextView tv1, tv2;
     }
 }
 

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.admin.fhnwapp.CustomAdapter;
+import com.example.admin.fhnwapp.FAQEntry;
 import com.example.admin.fhnwapp.MainActivity;
 import com.example.admin.fhnwapp.R;
 
@@ -32,16 +33,9 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class FAQFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     private static final String TAG = "FAQFragment";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -49,20 +43,9 @@ public class FAQFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FAQFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FAQFragment newInstance(String param1, String param2) {
+    public static FAQFragment newInstance() {
         FAQFragment fragment = new FAQFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -70,24 +53,17 @@ public class FAQFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-
-
-
     }
 
 
     private ListView lvFAQ;
-    private List<Entry> itemsList;
+    private List<FAQEntry> itemsList;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //List<Entry> itemsList;
+        //List<FAQEntry> itemsList;
 
 
         myFragementView = inflater.inflate(R.layout.fragment_faq, container, false);
@@ -96,6 +72,7 @@ public class FAQFragment extends Fragment {
 
 
     private View myFragementView;
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -112,12 +89,11 @@ public class FAQFragment extends Fragment {
         }
 
 
-        //ArrayList<Entry> itemsList = parse().getItemsList();
+        //ArrayList<FAQEntry> itemsList = parse().getItemsList();
         getActivity();
         lvFAQ.setAdapter(new CustomAdapter(getActivity(), itemsList));
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -157,10 +133,8 @@ public class FAQFragment extends Fragment {
     }
 
 
-
-
-
     private static final String ns = null;
+
     public List parse(InputStream in) throws XmlPullParserException, IOException {
         try {
             XmlPullParser parser = Xml.newPullParser();
@@ -172,6 +146,7 @@ public class FAQFragment extends Fragment {
             in.close();
         }
     }
+
     private List readFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
         List entries = new ArrayList();
 
@@ -191,26 +166,12 @@ public class FAQFragment extends Fragment {
         return entries;
     }
 
-    public static class Entry {
-        public final String title;
-        public final String link;
-        public final String summary;
-
-        private Entry(String title, String summary, String link) {
-            this.title = title;
-            Log.i(TAG, "Entry: " + this.title);
-            this.summary = summary;
-            this.link = link;
-        }
-    }
-
     // Parses the contents of an entry. If it encounters a title, summary, or link tag, hands them off
 // to their respective "read" methods for processing. Otherwise, skips the tag.
-    private Entry readEntry(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private FAQEntry readEntry(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, ns, "entry");
         String title = null;
         String summary = null;
-        String link = null;
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
@@ -220,13 +181,11 @@ public class FAQFragment extends Fragment {
                 title = readQuestion(parser);
             } else if (name.equals("answer")) {
                 summary = readAnswer(parser);
-            } else if (name.equals("link")) {
-                link = readLink(parser);
             } else {
                 skip(parser);
             }
         }
-        return new Entry(title, summary, link);
+        return new FAQEntry(title, summary);
     }
 
     // Processes title tags in the feed.
@@ -237,21 +196,6 @@ public class FAQFragment extends Fragment {
         return title;
     }
 
-    // Processes link tags in the feed.
-    private String readLink(XmlPullParser parser) throws IOException, XmlPullParserException {
-        String link = "";
-        parser.require(XmlPullParser.START_TAG, ns, "link");
-        String tag = parser.getName();
-        String relType = parser.getAttributeValue(null, "rel");
-        if (tag.equals("link")) {
-            if (relType.equals("alternate")){
-                link = parser.getAttributeValue(null, "href");
-                parser.nextTag();
-            }
-        }
-        parser.require(XmlPullParser.END_TAG, ns, "link");
-        return link;
-    }
 
     // Processes summary tags in the feed.
     private String readAnswer(XmlPullParser parser) throws IOException, XmlPullParserException {
