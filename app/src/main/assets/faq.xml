@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed>
+	<entry>
+		<question>First question of the day?</question>
+		<answer>My answer =)</answer>
+	</entry>
+	<entry>
+		<question>Next Question (2)</question>
+		<answer>My second answer</answer>
+	</entry>
+	<entry>
+		<question>This is my last question, number 3 so to speak</question>
+		<answer>My second answer</answer>
+	</entry>
+
+</feed>
