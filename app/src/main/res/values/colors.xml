@@ -8,4 +8,6 @@
     <color name="colorAccent">#ffffff</color-->
     <color name="colorForeground">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="color_navigation_list_background">#FFFFFF</color>
+
 </resources>
