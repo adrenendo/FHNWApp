@@ -1,18 +1,25 @@
 package com.example.admin.fragments;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
 import android.util.Xml;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.example.admin.fhnwapp.CustomAdapter;
 import com.example.admin.fhnwapp.FAQEntry;
+import com.example.admin.fhnwapp.FAQPop;
 import com.example.admin.fhnwapp.MainActivity;
 import com.example.admin.fhnwapp.R;
 
@@ -92,6 +99,43 @@ public class FAQFragment extends Fragment {
         //ArrayList<FAQEntry> itemsList = parse().getItemsList();
         getActivity();
         lvFAQ.setAdapter(new CustomAdapter(getActivity(), itemsList));
+        lvFAQ.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i(TAG, "onItemClick: ");
+
+                FAQEntry entry = itemsList.get(position);
+                Log.i(TAG, "onItemClick question: " + entry.getQuestion());
+                View popupView = getActivity().getLayoutInflater().inflate(R.layout.pop_faq, null);
+
+                PopupWindow popupWindow = new PopupWindow(popupView,
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+                // Example: If you have a TextView inside `popup_layout.xml`
+                TextView tv = (TextView) popupView.findViewById(R.id.tvPopupQuestion);
+
+                tv.setText(entry.getQuestion());
+
+                // If the PopupWindow should be focusable
+                popupWindow.setFocusable(true);
+
+                // If you need the PopupWindow to dismiss when when touched outside
+                popupWindow.setBackgroundDrawable(new ColorDrawable());
+
+                int location[] = new int[2];
+
+                // Get the View's(the one that was clicked in the Fragment) location
+                View anchorView = view ;
+                anchorView.getLocationOnScreen(location);
+
+                // Using location, the PopupWindow will be displayed right under anchorView
+                popupWindow.showAtLocation(anchorView, Gravity.NO_GRAVITY,
+                        location[0], location[1] + anchorView.getHeight());
+
+
+            }
+        });
+
     }
 
     public void onButtonPressed(Uri uri) {

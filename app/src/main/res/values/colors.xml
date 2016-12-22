@@ -9,5 +9,6 @@
     <color name="colorForeground">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="color_navigation_list_background">#FFFFFF</color>
+    <color name="colorPopupBackground">#e0e0e0</color>
 
 </resources>
