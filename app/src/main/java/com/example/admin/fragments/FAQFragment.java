@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.LoginFilter;
 import android.util.Log;
 import android.util.Xml;
 import android.view.Gravity;
@@ -19,7 +20,6 @@ import android.widget.TextView;
 
 import com.example.admin.fhnwapp.CustomAdapter;
 import com.example.admin.fhnwapp.FAQEntry;
-import com.example.admin.fhnwapp.FAQPop;
 import com.example.admin.fhnwapp.MainActivity;
 import com.example.admin.fhnwapp.R;
 
@@ -63,7 +63,6 @@ public class FAQFragment extends Fragment {
     }
 
 
-    private ListView lvFAQ;
     private List<FAQEntry> itemsList;
 
     @Override
@@ -83,7 +82,7 @@ public class FAQFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        lvFAQ = (ListView) myFragementView.findViewById(R.id.lvFAQ);
+        ListView lvFAQ = (ListView) myFragementView.findViewById(R.id.lvFAQ);
         try {
 //          InputStream is = getResources().getAssets().open("yourfilename.xml");
             Log.i(TAG, "onCreateTry: ");
@@ -108,13 +107,12 @@ public class FAQFragment extends Fragment {
                 Log.i(TAG, "onItemClick question: " + entry.getQuestion());
                 View popupView = getActivity().getLayoutInflater().inflate(R.layout.pop_faq, null);
 
-                PopupWindow popupWindow = new PopupWindow(popupView,
-                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                PopupWindow popupWindow = new PopupWindow(popupView, (int)(parent.getWidth() * 1),  (int)(parent.getHeight() * 1));
 
                 // Example: If you have a TextView inside `popup_layout.xml`
                 TextView tv = (TextView) popupView.findViewById(R.id.tvPopupQuestion);
 
-                tv.setText(entry.getQuestion());
+                tv.setText(entry.getQuestion() + "\n\n" + entry.getAnswer());
 
                 // If the PopupWindow should be focusable
                 popupWindow.setFocusable(true);
@@ -126,12 +124,17 @@ public class FAQFragment extends Fragment {
 
                 // Get the View's(the one that was clicked in the Fragment) location
                 View anchorView = view ;
-                anchorView.getLocationOnScreen(location);
+                //anchorView.getLocationOnScreen(location);
+
+                int location2[] = new int[2];
+
+                parent.getLocationOnScreen(location2);
+
+                Log.i(TAG, "onItemClick: " + location[0] + " location y:" + location[1] + " height:" + anchorView.getHeight());
 
                 // Using location, the PopupWindow will be displayed right under anchorView
                 popupWindow.showAtLocation(anchorView, Gravity.NO_GRAVITY,
-                        location[0], location[1] + anchorView.getHeight());
-
+                        location2[0], location2[1]);
 
             }
         });
