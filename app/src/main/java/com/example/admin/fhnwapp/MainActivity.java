@@ -1,5 +1,6 @@
 package com.example.admin.fhnwapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,7 @@ import android.view.MenuItem;
 
 import com.example.admin.fragments.FAQFragment;
 import com.example.admin.fragments.MainFragment;
+import com.example.admin.fragments.SettingsFragment;
 import com.example.admin.fragments.ShareFragment;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -30,6 +32,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -64,6 +69,17 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        MenuItem mItem = (MenuItem) findViewById(R.id.action_settings);
+/*
+        mItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                                             @Override
+                                             public boolean onMenuItemClick(MenuItem item) {
+
+                                                 return true;
+                                             }
+                                         }
+        );
+*/
         if(isInit) {
             android.app.FragmentManager fm = getFragmentManager();
             fm.beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
@@ -98,6 +114,9 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            android.app.FragmentManager fm = getFragmentManager();
+
+            fm.beginTransaction().replace(R.id.content_frame, new SettingsFragment()).commit();
             return true;
         }
 

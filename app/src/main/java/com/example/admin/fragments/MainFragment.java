@@ -14,6 +14,9 @@ import com.example.admin.fhnwapp.R;
  */
 
 public class MainFragment extends Fragment {
+
+    private static final String TAG = "MainFragment";
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

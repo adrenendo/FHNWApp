@@ -10,16 +10,17 @@ import android.view.ViewGroup;
 import com.example.admin.fhnwapp.R;
 
 /**
- * Created by admin on 08.12.2016.
+ * Created by admin on 24.12.2016.
  */
 
-public class ShareFragment extends Fragment {
-    private static final String TAG = "ShareFragment";
+public class SettingsFragment extends Fragment {
+
+    private static final String TAG = "MainFragment";
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_share, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
         return rootView;
     }
 }
