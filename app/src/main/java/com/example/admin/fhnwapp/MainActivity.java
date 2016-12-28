@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.admin.fragments.FAQFragment;
+import com.example.admin.fragments.LinksFragment;
 import com.example.admin.fragments.MainFragment;
 import com.example.admin.fragments.SettingsFragment;
 import com.example.admin.fragments.ShareFragment;
@@ -138,8 +139,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.nav_links) {
+            fm.beginTransaction().replace(R.id.content_frame, new LinksFragment()).commit();
         } else if (id == R.id.nav_share) {
             fm.beginTransaction().replace(R.id.content_frame, new ShareFragment()).commit();
         } else if (id == R.id.nav_send) {
