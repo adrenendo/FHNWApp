@@ -35,7 +35,7 @@ public class SlideAdapter extends PagerAdapter {
         @Override
         public Object instantiateItem(ViewGroup container, int i) {
             ImageView mImageView = new ImageView(mContext);
-            mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            mImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             mImageView.setImageResource(sliderImagesId[i]);
             ((ViewPager) container).addView(mImageView, 0);
             return mImageView;
