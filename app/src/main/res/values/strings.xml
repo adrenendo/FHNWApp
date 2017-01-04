@@ -6,13 +6,12 @@
 
     <string name="action_settings">Settings</string>
     <string name="developer_email">rafael.nuenlist@students.fhnw.ch</string>
-    <string name="fragment_main_text">Main</string>
     <string name="fragment_share_text">Share it!</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nav_faq_title">FAQ</string>
     <string name="nav_notification_title">Notifications</string>
     <string name="nav_links_title" >Links</string>
+    <string name="nav_homepage_title">Go to homepage</string>
 
 </resources>

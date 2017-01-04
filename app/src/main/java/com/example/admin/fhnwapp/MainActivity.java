@@ -1,6 +1,7 @@
 package com.example.admin.fhnwapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -135,7 +136,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_faq) {
             // Handle the camera action
             fm.beginTransaction().replace(R.id.content_frame, new FAQFragment()).commit();
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_notifications) {
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -145,6 +146,9 @@ public class MainActivity extends AppCompatActivity
             fm.beginTransaction().replace(R.id.content_frame, new ShareFragment()).commit();
         } else if (id == R.id.nav_send) {
 
+        } else if(id == R.id.nav_homepage) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fhnw.ch/business/msc-bis"));
+            startActivity(browserIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

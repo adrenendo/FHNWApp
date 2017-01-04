@@ -23,11 +23,11 @@ public class LinksFragment extends Fragment {
 
         TextView textView = (TextView) myFragmentView.findViewById(R.id.tvLinks);
 
-        textView.setText( Html.fromHtml("Jobs/Internships: <a href=\"http://next-career.ch/en\" >next-career.ch</a><br><br>" +
-                                        "Library book search: <a href=\"https://www.swissuniversities.ch/en/services/e-resources-cas/resources-by-document-type/databases/\">Database</a><br><br>" +
-                "                        Study regulations: <a href=\"http://www.fhnw.ch/bachelor-und-master/rechtserlasse/HSW_Study%20and%20Examination%20Regulations%20MSc%20BIS_IM.PDF\">PDF File</a>"));
+        textView.setText( Html.fromHtml("<a href=\"http://next-career.ch/en\" >Jobs/Internships</a><br><br>" +
+                                        "<a href=\"https://www.swissuniversities.ch/en/services/e-resources-cas/resources-by-document-type/databases/\">Library book search</a><br><br>" +
+                "                        <a href=\"http://www.fhnw.ch/bachelor-und-master/rechtserlasse/HSW_Study%20and%20Examination%20Regulations%20MSc%20BIS_IM.PDF\">Study regulations</a>"));
         textView.setLinkTextColor(getResources().getColor(R.color.colorForeground));
-        //"<ul><li>Jobs/Internships: <a href=\"http://www.google.com\" >Google</a></li><li>Library book search: <a href=\"http://www.chip.de\">CHippppiiii</a></li></ul>");
+
         textView.setMovementMethod(LinkMovementMethod.getInstance());
 
         return myFragmentView;
