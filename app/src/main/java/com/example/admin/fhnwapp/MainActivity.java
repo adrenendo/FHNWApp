@@ -3,15 +3,9 @@ package com.example.admin.fhnwapp;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.text.LoginFilter;
-import android.util.Log;
-import android.util.Xml;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,17 +17,7 @@ import com.example.admin.fragments.FAQFragment;
 import com.example.admin.fragments.LinksFragment;
 import com.example.admin.fragments.MainFragment;
 import com.example.admin.fragments.SettingsFragment;
-import com.example.admin.fragments.ShareFragment;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
+import com.example.admin.fragments.SlideshowFragment;
 
 
 public class MainActivity extends AppCompatActivity
@@ -46,6 +30,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -138,12 +123,18 @@ public class MainActivity extends AppCompatActivity
             fm.beginTransaction().replace(R.id.content_frame, new FAQFragment()).commit();
         } else if (id == R.id.nav_notifications) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_links) {
             fm.beginTransaction().replace(R.id.content_frame, new LinksFragment()).commit();
-        } else if (id == R.id.nav_share) {
-            fm.beginTransaction().replace(R.id.content_frame, new ShareFragment()).commit();
+        } else if (id == R.id.nav_slideshow) {
+            fm.beginTransaction().replace(R.id.content_frame, new SlideshowFragment()).commit();
+            fm.executePendingTransactions();
+
+            ViewPager mViewPager = (ViewPager) findViewById(R.id.viewPageAndroid);
+            SlideAdapter adapterView = new SlideAdapter(this);
+            mViewPager.setAdapter(adapterView);
+
         } else if (id == R.id.nav_send) {
 
         } else if(id == R.id.nav_homepage) {
