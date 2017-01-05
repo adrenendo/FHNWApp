@@ -1,9 +1,14 @@
 package com.example.admin.fhnwapp;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -122,7 +127,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             fm.beginTransaction().replace(R.id.content_frame, new FAQFragment()).commit();
         } else if (id == R.id.nav_notifications) {
-
+            sendNotification("Event change: No lessons today!");
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_links) {
@@ -131,6 +136,7 @@ public class MainActivity extends AppCompatActivity
             fm.beginTransaction().replace(R.id.content_frame, new SlideshowFragment()).commit();
             fm.executePendingTransactions();
 
+            // Set up Slideshow
             ViewPager mViewPager = (ViewPager) findViewById(R.id.viewPageAndroid);
             SlideAdapter adapterView = new SlideAdapter(this);
             mViewPager.setAdapter(adapterView);
@@ -146,4 +152,58 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+/*
+    @Override
+    public void onDeletedMessages() {
+
+        sendNotification("Message Deleted On server");
+        super.onDeletedMessages();
+    }
+
+    @Override
+    public void onMessageReceived(String from, Bundle data) {
+
+        sendNotification("Received: " + data.getString("message"));
+        super.onMessageReceived(from, data);
+    }
+
+    @Override
+    public void onMessageSent(String msgId) {
+
+        sendNotification("Message Sent: " + msgId);
+        super.onMessageSent(msgId);
+    }
+
+    @Override
+    public void onSendError(String msgId, String error) {
+
+        sendNotification("Message Sent Error: " + msgId + "Error: " + error);
+        super.onSendError(msgId, error);
+    }
+*/
+    private void sendNotification(String msg) {
+
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("Message", msg);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
+                intent, PendingIntent.FLAG_ONE_SHOT);
+
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(
+                this).setSmallIcon(R.drawable.ic_menu_send)
+                .setContentTitle("Notification Message").setContentText(msg)
+                .setAutoCancel(true).setSound(defaultSoundUri)
+                .setContentIntent(pendingIntent);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        notificationManager.notify(0, notificationBuilder.build());
+
+    }
+
+
+
+
 }

@@ -1,63 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed>
 	<entry>
-		<question>First question of the day?</question>
-		<answer>My answer = lkjlkj lkj lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj j lkjlkjl kjlk jl kjl kjlkjlkj lkj lkj lkj lkj lk jlk jl kj lkj lkj lk jlk jl kjl kj )</answer>
+		<question>What are the tuition fees?</question>
+		<answer>Tuition fees are CHF 700 per semester for Swiss and EU/EFTA citizens as well as for students with a permanent place of residence in Switzerland or the EU/EFTA countries. The fee for all other students is CHF 7500 per semester.</answer>
 	</entry>
 	<entry>
-		<question>Next Question (2)</question>
-		<answer>My second answer</answer>
+		<question>Where are the teaching locations?</question>
+		<answer>Teaching is offered mainly in Olten Some elective courses may take place in Basel.</answer>
 	</entry>
 	<entry>
-		<question>This is my last question, number 3 so to speak</question>
-		<answer>My second answer</answer>
+		<question>Is part time study possible?</question>
+		<answer>Yes.</answer>
 	</entry>
 	<entry>
-		<question>Next Question (2)</question>
-		<answer>My second answer</answer>
+		<question>Can I change between full and part time studies?</question>
+		<answer>Yes.</answer>
 	</entry>
 	<entry>
-		<question>This is my last question, number 3 so to speak</question>
-		<answer>My second answer</answer>
+		<question>When is the deadline for application?</question>
+		<answer>Application deadline start September: Mid-May. Application deadline start February: Mid-November</answer>
 	</entry>
 	<entry>
-		<question>Next Question (2)</question>
-		<answer>My second answer</answer>
-	</entry>
-	<entry>
-		<question>This is my last question, number 3 so to speak</question>
-		<answer>My second answer</answer>
-	</entry>
-	<entry>
-		<question>Next Question (2)</question>
-		<answer>My second answer</answer>
-	</entry>
-	<entry>
-		<question>This is my last question, number 3 so to speak</question>
-		<answer>My second answer</answer>
-	</entry>
-	<entry>
-		<question>Next Question (2)</question>
-		<answer>My second answer</answer>
-	</entry>
-	<entry>
-		<question>This is my last question, number 3 so to speak</question>
-		<answer>My second answer</answer>
-	</entry>
-	<entry>
-		<question>Next Question (2)</question>
-		<answer>My second answer</answer>
-	</entry>
-	<entry>
-		<question>This is my last question, number 3 so to speak</question>
-		<answer>My second answer</answer>
-	</entry>
-	<entry>
-		<question>Next Question (2)</question>
-		<answer>My second answer</answer>
-	</entry>
-	<entry>
-		<question>This is my last question, number 3 so to speak</question>
-		<answer>My second answer</answer>
+		<question>When do the studies start?</question>
+		<answer>Students can start their studies either in September or February.</answer>
 	</entry>
 </feed>
