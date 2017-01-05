@@ -3,32 +3,74 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     tools:context="com.example.admin.fragments.SettingsFragment">
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:padding="@dimen/fragment_horizontal_margin">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-        <CheckBox
-            android:text="CheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="59dp"
-            android:layout_marginStart="59dp"
-            android:layout_marginTop="73dp"
-            android:id="@+id/checkBox" />
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/tv_login_title" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/tv_email" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtEmail"
+                    android:imeOptions="flagNoExtractUi"
+                    android:hint="@string/txt_email_hint"
+                    android:inputType="textEmailAddress" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/tv_password" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:hint="@string/txt_password_hint"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtPassword"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textPassword"/>
+            </TableRow></TableLayout>
 
         <Button
-            android:text="Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/checkBox"
-            android:layout_toRightOf="@+id/checkBox"
-            android:layout_toEndOf="@+id/checkBox"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:id="@+id/button2" />
-    </RelativeLayout>
+            android:layout_gravity="right"
+            android:id="@+id/btnLogin"
+            android:text="@string/btn_login" />
+    </LinearLayout>
+
 </FrameLayout>

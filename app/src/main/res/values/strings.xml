@@ -14,4 +14,19 @@
     <string name="nav_links_title" >Links</string>
     <string name="nav_homepage_title">Go to homepage</string>
 
+    <string name="fragment_links_text"><![CDATA[<a href=\"https://eventowebtool.fhnw.ch\">Eventowebtool</a><br><br>
+            <a href=\"http://www.fhnw.ch/business/msc-bis/course-2/full-time/timetable\" >Timetable full time</a><br><br>
+            <a href=\"http://www.fhnw.ch/business/msc-bis/course-2/part-time/timetable\" >Timetable part time</a><br><br>
+            <a href=\"http://www.fhnw.ch/business/msc-bis/admission-and-information/application-for-admission-to-a-master-programme-msc-bis\" >Online application for admission</a><br><br>
+            <a href=\"http://next-career.ch/en\" >Jobs/Internships</a><br><br>
+            <a href=\"https://www.swissuniversities.ch/en/services/e-resources-cas/resources-by-document-type/databases/\">Library book search</a><br><br>
+            <a href=\"http://www.fhnw.ch/bachelor-und-master/rechtserlasse/HSW_Study%20and%20Examination%20Regulations%20MSc%20BIS_IM.PDF\">Study regulations</a><br><br>
+            <a href=\"mailto:raumverwaltung.olten@fhnw.ch?subject=Raumreservation\" >Reservation of a room</a>]]></string>
+    <string name="btn_login">Login</string>
+    <string name="txt_password_hint">123</string>
+    <string name="tv_password">Password:</string>
+    <string name="tv_email">FHNW Email:</string>
+    <string name="txt_email_hint">first.last@fhnw.ch</string>
+    <string name="tv_login_title">Login</string>
+
 </resources>
