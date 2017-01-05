@@ -21,7 +21,8 @@
             <a href=\"http://next-career.ch/en\" >Jobs/Internships</a><br><br>
             <a href=\"https://www.swissuniversities.ch/en/services/e-resources-cas/resources-by-document-type/databases/\">Library book search</a><br><br>
             <a href=\"http://www.fhnw.ch/bachelor-und-master/rechtserlasse/HSW_Study%20and%20Examination%20Regulations%20MSc%20BIS_IM.PDF\">Study regulations</a><br><br>
-            <a href=\"mailto:raumverwaltung.olten@fhnw.ch?subject=Raumreservation\" >Reservation of a room</a>]]></string>
+            <a href=\"mailto:raumverwaltung.olten@fhnw.ch?subject=Raumreservation\" >Reservation of a room</a><br><br>
+            <a href=\"http://www.fhnw.ch/campus-olten/ueber-den-campus/verpflegung/menu_v_e.pdf\">Restaurant Von Roll</a>]]></string>
     <string name="btn_login">Login</string>
     <string name="txt_password_hint">123</string>
     <string name="tv_password">Password:</string>
