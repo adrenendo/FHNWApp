@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.admin.fragments.FAQFragment;
 import com.example.admin.fragments.LinksFragment;
@@ -137,8 +138,9 @@ public class MainActivity extends AppCompatActivity
             fm.executePendingTransactions();
 
             // Set up Slideshow
+            TextView caption = (TextView) findViewById(R.id.tvCaption);
             ViewPager mViewPager = (ViewPager) findViewById(R.id.viewPageAndroid);
-            SlideAdapter adapterView = new SlideAdapter(this);
+            SlideAdapter adapterView = new SlideAdapter(this, caption, mViewPager);
             mViewPager.setAdapter(adapterView);
 
         } else if (id == R.id.nav_send) {

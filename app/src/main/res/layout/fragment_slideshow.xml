@@ -12,7 +12,13 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPageAndroid"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/fragment_horizontal_margin" />
+        <TextView
+            android:id="@+id/tvCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dip" android:maxLines="2" android:minLines="1" android:ellipsize="end"
+            android:textAlignment="center" />
     </RelativeLayout>
 </FrameLayout>
