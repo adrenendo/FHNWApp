@@ -40,19 +40,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -62,17 +49,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        MenuItem mItem = (MenuItem) findViewById(R.id.action_settings);
-/*
-        mItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                                             @Override
-                                             public boolean onMenuItemClick(MenuItem item) {
-
-                                                 return true;
-                                             }
-                                         }
-        );
-*/
         if(isInit) {
             android.app.FragmentManager fm = getFragmentManager();
             fm.beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
@@ -125,12 +101,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_faq) {
-            // Handle the camera action
             fm.beginTransaction().replace(R.id.content_frame, new FAQFragment()).commit();
         } else if (id == R.id.nav_notifications) {
             sendNotification("Event change: No lessons today!");
-        } else if (id == R.id.nav_share) {
-
         } else if (id == R.id.nav_links) {
             fm.beginTransaction().replace(R.id.content_frame, new LinksFragment()).commit();
         } else if (id == R.id.nav_slideshow) {
@@ -143,8 +116,6 @@ public class MainActivity extends AppCompatActivity
             SlideAdapter adapterView = new SlideAdapter(this, caption, mViewPager);
             mViewPager.setAdapter(adapterView);
 
-        } else if (id == R.id.nav_send) {
-
         } else if(id == R.id.nav_homepage) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fhnw.ch/business/msc-bis"));
             startActivity(browserIntent);
@@ -154,35 +125,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-/*
-    @Override
-    public void onDeletedMessages() {
 
-        sendNotification("Message Deleted On server");
-        super.onDeletedMessages();
-    }
-
-    @Override
-    public void onMessageReceived(String from, Bundle data) {
-
-        sendNotification("Received: " + data.getString("message"));
-        super.onMessageReceived(from, data);
-    }
-
-    @Override
-    public void onMessageSent(String msgId) {
-
-        sendNotification("Message Sent: " + msgId);
-        super.onMessageSent(msgId);
-    }
-
-    @Override
-    public void onSendError(String msgId, String error) {
-
-        sendNotification("Message Sent Error: " + msgId + "Error: " + error);
-        super.onSendError(msgId, error);
-    }
-*/
     private void sendNotification(String msg) {
 
         Intent intent = new Intent(this, MainActivity.class);
@@ -204,8 +147,4 @@ public class MainActivity extends AppCompatActivity
         notificationManager.notify(0, notificationBuilder.build());
 
     }
-
-
-
-
 }

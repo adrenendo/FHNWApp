@@ -94,9 +94,6 @@ public class FAQFragment extends Fragment {
             Log.i(TAG, "onCreateException: " + e.toString());
         }
 
-
-        //ArrayList<FAQEntry> itemsList = parse().getItemsList();
-        getActivity();
         lvFAQ.setAdapter(new CustomAdapter(getActivity(), itemsList));
         lvFAQ.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -108,23 +105,13 @@ public class FAQFragment extends Fragment {
                 View popupView = getActivity().getLayoutInflater().inflate(R.layout.pop_faq, null);
 
                 PopupWindow popupWindow = new PopupWindow(popupView, (int)(parent.getWidth() * 1),  (int)(parent.getHeight() * 1));
-
-                // Example: If you have a TextView inside `popup_layout.xml`
                 TextView tv = (TextView) popupView.findViewById(R.id.tvPopupQuestion);
-
                 tv.setText(entry.getQuestion() + "\n\n" + entry.getAnswer());
-
-                // If the PopupWindow should be focusable
                 popupWindow.setFocusable(true);
-
-                // If you need the PopupWindow to dismiss when when touched outside
                 popupWindow.setBackgroundDrawable(new ColorDrawable());
 
                 int location[] = new int[2];
-
-                // Get the View's(the one that was clicked in the Fragment) location
                 View anchorView = view ;
-                //anchorView.getLocationOnScreen(location);
 
                 int location2[] = new int[2];
 
@@ -164,16 +151,6 @@ public class FAQFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
@@ -203,7 +180,6 @@ public class FAQFragment extends Fragment {
                 continue;
             }
             String name = parser.getName();
-            // Starts by looking for the entry tag
             if (name.equals("entry")) {
                 entries.add(readEntry(parser));
             } else {
@@ -213,8 +189,6 @@ public class FAQFragment extends Fragment {
         return entries;
     }
 
-    // Parses the contents of an entry. If it encounters a title, summary, or link tag, hands them off
-// to their respective "read" methods for processing. Otherwise, skips the tag.
     private FAQEntry readEntry(XmlPullParser parser) throws XmlPullParserException, IOException {
         parser.require(XmlPullParser.START_TAG, ns, "entry");
         String title = null;
@@ -235,7 +209,6 @@ public class FAQFragment extends Fragment {
         return new FAQEntry(title, summary);
     }
 
-    // Processes title tags in the feed.
     private String readQuestion(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, ns, "question");
         String title = readText(parser);
@@ -243,8 +216,6 @@ public class FAQFragment extends Fragment {
         return title;
     }
 
-
-    // Processes summary tags in the feed.
     private String readAnswer(XmlPullParser parser) throws IOException, XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, ns, "answer");
         String summary = readText(parser);
@@ -252,7 +223,6 @@ public class FAQFragment extends Fragment {
         return summary;
     }
 
-    // For the tags title and summary, extracts their text values.
     private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
         String result = "";
         if (parser.next() == XmlPullParser.TEXT) {

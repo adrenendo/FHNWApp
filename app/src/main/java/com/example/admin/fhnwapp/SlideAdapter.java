@@ -3,7 +3,6 @@ package com.example.admin.fhnwapp;
 import android.support.v4.view.PagerAdapter;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
-import android.text.LoginFilter;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +16,13 @@ import android.widget.TextView;
 public class SlideAdapter extends PagerAdapter {
         private static final String TAG = "SlideAdapter";
 
-        Context mContext;
+        Context myContext;
         TextView myCaption;
         ViewPager myPager;
 
         public SlideAdapter(Context context, TextView caption, ViewPager pager) {
             this.myCaption = caption;
-            this.mContext = context;
+            this.myContext = context;
             this.myPager = pager;
         }
 
@@ -58,7 +57,7 @@ public class SlideAdapter extends PagerAdapter {
 
         @Override
         public Object instantiateItem(ViewGroup container, int i) {
-            ImageView mImageView = new ImageView(mContext);
+            ImageView mImageView = new ImageView(myContext);
             mImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             mImageView.setImageResource(sliderImagesId[i]);
 
