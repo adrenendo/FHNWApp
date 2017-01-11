@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "475774287103",
-    "firebase_url": "https://fhnwapp.firebaseio.com",
-    "project_id": "fhnwapp",
-    "storage_bucket": "fhnwapp.appspot.com"
+    "project_number": "332463835216",
+    "firebase_url": "https://msc-bis.firebaseio.com",
+    "project_id": "msc-bis",
+    "storage_bucket": "msc-bis.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:475774287103:android:2915b7fb2c8235f3",
+        "mobilesdk_app_id": "1:332463835216:android:df351737afc77d5e",
         "android_client_info": {
-          "package_name": "com.example.admin.FHNWapp"
+          "package_name": "com.example.admin.fhnwapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "475774287103-mkjra4dkuam8hgqbjtdn022kajivt5fa.apps.googleusercontent.com",
+          "client_id": "332463835216-5osbpq9q3moq3pg4m2vsvb6ga06be6bl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDB_zBR_TYLkIsBekilo22jAA1bm0FEODg"
+          "current_key": "AIzaSyBLMdtmvqFedXCb3jHZD8Fa5dvBnE6kzHQ"
         }
       ],
       "services": {
@@ -31,50 +31,6 @@
         "appinvite_service": {
           "status": 1,
           "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:475774287103:android:df351737afc77d5e",
-        "android_client_info": {
-          "package_name": "com.example.admin.fhnwapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "475774287103-qgbimp0qsco4e5jm8ores1m4lhda8vrc.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.admin.fhnwapp",
-            "certificate_hash": "910A57A613F8B945586CFFD0F8EE660765F8FADB"
-          }
-        },
-        {
-          "client_id": "475774287103-mkjra4dkuam8hgqbjtdn022kajivt5fa.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDB_zBR_TYLkIsBekilo22jAA1bm0FEODg"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "475774287103-mkjra4dkuam8hgqbjtdn022kajivt5fa.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
         },
         "ads_service": {
           "status": 2
