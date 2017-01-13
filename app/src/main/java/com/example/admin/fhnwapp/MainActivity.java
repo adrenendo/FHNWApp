@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_faq) {
             fm.beginTransaction().replace(R.id.content_frame, new FAQFragment()).commit();
         } else if (id == R.id.nav_notifications) {
-            sendNotification("Event change: No lessons today!");
+            simulateNotification("Automatically fired test notification...");
         } else if (id == R.id.nav_links) {
             fm.beginTransaction().replace(R.id.content_frame, new LinksFragment()).commit();
         } else if (id == R.id.nav_slideshow) {
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity
             mViewPager.setAdapter(adapterView);
 
         } else if(id == R.id.nav_homepage) {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fhnw.ch/business/msc-bis"));
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.nav_homepage_link)));
             startActivity(browserIntent);
         }
 
@@ -126,7 +126,8 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void sendNotification(String msg) {
+
+    private void simulateNotification(String msg) {
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("Message", msg);
